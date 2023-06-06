@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<section class="section-p1">
+<div class="parent-div">
+    <div class="productimg">
+        <img src="/static/{{item[0]['image']}}" alt="">
+    </div>
+
+    <div class="productinfo">
+        <h2>{{ item[0]['name'] }}</h2>
+        <h3>$ {{ item[0]['price'] }}</h3>
+        <form action="/Addtocart" method="post">
+            <label for="quantity">Qty:</label>
+            <input type="number" id="sold_quantity" name="sold_quantity" value="1">
+            <input type="hidden" id="item_id" name="item_id" value="{{ item[0]['id'] }}">
+            <button class="button" type="submit">Add to cart</button>
+        </form>
+        <p>{{ item[0]['description'] }}</p>
+    </div>
+</div>
+</section>
+{% endblock %}

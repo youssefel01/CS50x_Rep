@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <section class="section-cart section-p1">
+    <div class="Header">
+      <h3 class="Heading">Shopping Cart</h3>
+    </div>
+    <div class="check">
+      <h4>Total: $ {{ Total }}</h4>
+      <a href="/checkout">checkout</a>
+    </div>
+    {% for order in orders %}
+    <div class="parent-div">
+      <div class="cartimg">
+          <img src="/static/{{order['image']}}" alt="">
+      </div>
+
+      <div class="cartinfo">
+          <h4>{{ order['name'] }}</h4>
+          <h5>$ {{ order['price'] }}</h5>
+          <h5>Qty: {{ order['totalQ'] }}</h5>
+          <a href="/remove_from_cart/{{ order['item_id'] }}">Remove</a>
+      </div>
+  </div>
+  {% endfor %}
+  </section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="text-start">Symbol</th>
+            <th class="text-start">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">Transacted</th>
+        </tr>
+    </thead>
+   <tbody>
+        {% for stock in stocks %}
+            <tr>
+                <td class="text-start">{{ stock["symbol"] }}</td>
+                <td class="text-start">{{ stock["shares"] }}</td>
+                <td class="text-end">${{ stock["price"] }}</td>
+                <td class="text-end">{{ stock["time"] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table
+{% endblock %}

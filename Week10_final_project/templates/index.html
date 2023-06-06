@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <section id="hero">
+        <h4>Get lost in a good book today!</h4>
+        <h3>Discover the magic of reading</h3>
+        <h2>With Our Extensive</h2>
+        <h2>Collection Of Books!</h2>
+        <p>Enjoy your trip!</p>
+        <a href="#product1"><button >Shop Now</button></a>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="{{url_for('static', filename='img/feature/f1.png')}}" alt="">
+            <h6>Free Shipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="{{url_for('static', filename='img/feature/f2.png')}}" alt="">
+            <h6>Online Order</h6>
+        </div>
+        <div class="fe-box">
+            <img src="{{url_for('static', filename='img/feature/f3.png')}}" alt="">
+            <h6>Save Money</h6>
+        </div>
+        <div class="fe-box">
+            <img src="{{url_for('static', filename='img/feature/f4.png')}}" alt="">
+            <h6>Promotions</h6>
+        </div>
+        <div class="fe-box">
+            <img src="{{url_for('static', filename='img/feature/f5.png')}}" alt="">
+            <h6>Happy Sell</h6>
+        </div>
+        <div class="fe-box">
+            <img src="{{url_for('static', filename='img/feature/f6.png')}}" alt="">
+            <h6>F24/7 Support</h6>
+        </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>New Arrivals</h2>
+        <p>Invest in your personal growth and development with our educational books.</p>
+        <div class="pro-container">
+            {% for item in items %}
+            <div class="pro">
+            <a href="{{ url_for('item_detail', item_id=item.id) }}">
+                <img src="static/{{ item.image}}" alt="">
+                <div class="des">
+                    <span>Braind name</span>
+                    <h5>{{ item.name }}</h5>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>$ {{ item.price }}</h4>
+                </div>
+            </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
+{% endblock %}

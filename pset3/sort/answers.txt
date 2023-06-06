@@ -1,0 +1,12 @@
+sort1 uses: Bubble sort
+
+How do you know?: is the faster in sorted files
+
+sort2 uses: Merge sort
+
+How do you know?: is the faster in random files
+
+sort3 uses: Selection sort
+
+How do you know?: is the faster in reversed files
+

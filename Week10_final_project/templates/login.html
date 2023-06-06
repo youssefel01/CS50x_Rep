@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<section class="section-p1">
+<form action="/login" method="post" class="form">
+    <div class="input">
+        <input autocomplete="off" autofocus class="input" id="username" name="username" placeholder="Username" type="text">
+    </div>
+    <div class="input">
+        <input class="input" id="password" name="password" placeholder="Password" type="password">
+    </div>
+    <button class="button" type="submit">Log in</button>
+</form>
+<div class="form">
+    <p>If you don't have an account, <a href="{{ url_for('register') }}">Register</a>.</p>
+</div>
+</section>
+{% endblock %}

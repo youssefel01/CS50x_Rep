@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<section class="section-p1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h2>HI {{ user[0]['username'] }}</h2>
+                <hr>
+                <div class="form-group">
+                    <label for="name">Username:</label>
+                    <input type="text" id="name" name="name" class="form-control" value="{{ user[0]['username'] }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" value="{{ user[0]['email'] }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="email">Address:</label>
+                    <input type="email" id="email" name="email" class="form-control" value="{{ user[0]['shipping_address'] }}" readonly>
+                </div>
+                <div class="form-group">
+                    <a class="button" href="{{ url_for('change_password') }}">Change Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
